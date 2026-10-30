@@ -1,0 +1,33 @@
+{
+  "name": "Old New TXT Bot",
+  "description": "A Telegram bot that compares old and new text files to find new links/classes",
+  "repository": "https://github.com/yourusername/old-new-txt-bot",
+  "logo": "https://i.ibb.co/zTPJFct8/photo-2025-04-25-12-55-01-7497233558289776672.jpg",
+  "keywords": ["telegram", "bot", "python", "file-comparison", "text-processing"],
+  "image": "heroku/python",
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ],
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "basic"
+    }
+  },
+  "env": {
+    "BOT_TOKEN": {
+      "description": "Your Telegram bot token from @BotFather",
+      "required": true
+    },
+    "ADMIN_ID": {
+      "description": "Your Telegram user ID for admin notifications (get from @userinfobot)",
+      "required": false
+    }
+  },
+  "addons": [],
+  "scripts": {
+    "postdeploy": "echo 'Bot deployed successfully! Make sure to set BOT_TOKEN and ADMIN_ID environment variables.'"
+  }
+}
